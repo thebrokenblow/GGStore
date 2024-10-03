@@ -1,0 +1,6 @@
+@GGStore_HostAddress = http://localhost:5080
+
+GET {{GGStore_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
