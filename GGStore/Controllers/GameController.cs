@@ -6,25 +6,40 @@ namespace GGStore.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class GameController(IGameService gameService)
+public class GameController(IGameService gameService) : ControllerBase
 {
     [HttpGet]
-    public IEnumerable<Game> Get() =>
-        gameService.GetAll();
+    public ActionResult<IEnumerable<Game>> Get()
+    {
+        var games = gameService.GetAll();
+        return Ok(games);
+    }
 
     [HttpGet("{id}")]
-    public async Task<Game> GetDetails(int id) =>
-        await gameService.GetByIdAsync(id);
+    public async Task<ActionResult<Game>> GetDetails(int id)
+    {
+        var game = await gameService.GetByIdAsync(id);
+        return Ok(game);
+    }
 
     [HttpPost(Name = "AddGame")]
-    public async Task<int> AddGame([FromBody] GameDto gameDto) =>
-       await gameService.AddAsync(gameDto);
+    public async Task<ActionResult<int>> AddGame([FromBody] GameDto gameDto)
+    {
+        var idGame = await gameService.AddAsync(gameDto);
+        return Ok(idGame);
+    }
 
     [HttpPut(Name = "EditGame")]
-    public async Task EditGame(int id, [FromBody] GameDto gameDto) =>
-      await gameService.EditAsync(id, gameDto);
+    public async Task<ActionResult> EditGame(int id, [FromBody] GameDto gameDto)
+    {
+        await gameService.EditAsync(id, gameDto);
+        return NoContent();
+    }
 
     [HttpDelete("{id}")]
-    public async Task DeleteGame(int id) =>
+    public async Task<ActionResult> DeleteGame(int id)
+    {
         await gameService.DeleteAsync(id);
+        return NoContent();
+    }
 }
