@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGStore", "GGStore\GGStore.csproj", "{4F6C9A6B-9DA8-4D03-BCCE-29E9D86EA20E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GGStore", "GGStore\GGStore.csproj", "{4F6C9A6B-9DA8-4D03-BCCE-29E9D86EA20E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{53BAF60A-0C1A-4BCD-82EC-2DBF4FD6AB5E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GGStore.Domain", "GGStore.Domain\GGStore.Domain.csproj", "{83E901DB-1977-4C49-9392-1986B0A33D39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{2DD3574D-5094-4753-ABF7-907ABC4FEF15}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GGStore.Database", "GGStore.Database\GGStore.Database.csproj", "{3D72AFF9-6CB7-4092-9F2E-BD4DB5CD45A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{CB9397D5-E2AD-4FE6-B993-2BE504F25C08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +25,22 @@ Global
 		{4F6C9A6B-9DA8-4D03-BCCE-29E9D86EA20E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F6C9A6B-9DA8-4D03-BCCE-29E9D86EA20E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F6C9A6B-9DA8-4D03-BCCE-29E9D86EA20E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83E901DB-1977-4C49-9392-1986B0A33D39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83E901DB-1977-4C49-9392-1986B0A33D39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83E901DB-1977-4C49-9392-1986B0A33D39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83E901DB-1977-4C49-9392-1986B0A33D39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D72AFF9-6CB7-4092-9F2E-BD4DB5CD45A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D72AFF9-6CB7-4092-9F2E-BD4DB5CD45A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D72AFF9-6CB7-4092-9F2E-BD4DB5CD45A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D72AFF9-6CB7-4092-9F2E-BD4DB5CD45A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4F6C9A6B-9DA8-4D03-BCCE-29E9D86EA20E} = {CB9397D5-E2AD-4FE6-B993-2BE504F25C08}
+		{83E901DB-1977-4C49-9392-1986B0A33D39} = {53BAF60A-0C1A-4BCD-82EC-2DBF4FD6AB5E}
+		{3D72AFF9-6CB7-4092-9F2E-BD4DB5CD45A0} = {2DD3574D-5094-4753-ABF7-907ABC4FEF15}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B5F2F99E-AECC-4275-886D-DC33DB4EAB86}
