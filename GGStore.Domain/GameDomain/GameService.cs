@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using GGStore.Domain.GameDomain.Interfaces;
 
 namespace GGStore.Domain.GameDomain;
@@ -14,13 +15,13 @@ public class GameService(IMapper mapper, IGameRepository gameRepository) : IGame
     public Task EditAsync(int id, GameDto gameDto) =>
         gameRepository.EditAsync(id, gameDto);
 
-    public IEnumerable<Game> GetAll() =>
-        gameRepository.GetAll();
+    public IEnumerable<GameVM> GetAll() =>
+        gameRepository.GetAll().ProjectTo<GameVM>(mapper.ConfigurationProvider);
 
-    public async Task<GameVM> GetByIdAsync(int id)
+    public async Task<GameDetailsVM> GetByIdAsync(int id)
     {
         var game = await gameRepository.GetByIdAsync(id);
-        var gameVM = mapper.Map<GameVM>(game);
+        var gameVM = mapper.Map<GameDetailsVM>(game);
 
         return gameVM;
     }

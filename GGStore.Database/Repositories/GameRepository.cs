@@ -59,8 +59,8 @@ public class GameRepository(GGStoreDbContext context) : IGameRepository
         await context.SaveChangesAsync();
     }
 
-    public IEnumerable<Game> GetAll() =>
-        context.Games.Include(x => x.Genres);
+    public IQueryable<Game> GetAll() =>
+        context.Games;
 
     public async Task<Game> GetByIdAsync(int id) =>
         await context.Games.Include(x => x.Genres).SingleAsync(game => game.Id == id);

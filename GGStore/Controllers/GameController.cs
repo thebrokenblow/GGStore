@@ -9,14 +9,14 @@ namespace GGStore.Controllers;
 public class GameController(IGameService gameService) : ControllerBase
 {
     [HttpGet]
-    public ActionResult<IEnumerable<Game>> Get()
+    public ActionResult<IEnumerable<GameVM>> Get()
     {
         var games = gameService.GetAll();
         return Ok(games);
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Game>> GetDetails(int id)
+    public async Task<ActionResult<GameDetailsVM>> GetDetails(int id)
     {
         var game = await gameService.GetByIdAsync(id);
         return Ok(game);
