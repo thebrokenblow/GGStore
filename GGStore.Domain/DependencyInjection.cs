@@ -23,6 +23,8 @@ public static class DependencyInjection
 
         var mapper = mapperConfig.CreateMapper();
         services.AddSingleton(mapper);
+        services.AddSingleton(new CreateGameValidation());
+
         services.AddTransient<IGameService, GameService>();
 
         return services;
